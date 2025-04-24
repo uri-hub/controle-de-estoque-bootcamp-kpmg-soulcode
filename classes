@@ -1,0 +1,43 @@
+CLASS ZEQP3_CL_PRODUTO DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    CLASS-DATA: PROD_ID     TYPE NUMC5,
+                DESC        TYPE CHAR100,
+                PRECO       TYPE P,
+                QTD         TYPE NUMC3,
+                CATEGORIA   TYPE NUMC3,
+                LV_RESPOSTA TYPE SY-UCOMM,
+                COLUMNS     TYPE REF TO CL_SALV_COLUMNS_TABLE,
+                COLUMN      TYPE REF TO CL_SALV_COLUMN.
+
+    METHODS:
+      CONSTRUCTOR IMPORTING P_PROD_ID   TYPE NUMC5
+                            P_DESC      TYPE CHAR100
+                            P_PRECO     TYPE P
+                            P_QTD       TYPE NUMC3
+                            P_CATEGORIA TYPE NUMC3,
+
+      CRIAR_PRODUTO IMPORTING LV_PROD_ID   TYPE NUMC5
+                              LV_DESC      TYPE CHAR100
+                              LV_PRECO     TYPE P
+                              LV_QTD       TYPE NUMC3
+                              LV_CATEGORIA TYPE NUMC3,
+
+      ATUALIZAR_PRODUTO IMPORTING LV_PROD_ID   TYPE NUMC5
+                                  LV_DESC      TYPE CHAR100
+                                  LV_PRECO     TYPE P
+                                  LV_QTD       TYPE NUMC3
+                                  LV_CATEGORIA TYPE NUMC3,
+
+      DELETAR_PRODUTO IMPORTING LV_PROD_ID TYPE NUMC5,
+
+      LISTAR_PRODUTOS.
+
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
